@@ -12,7 +12,7 @@ temp <- select(raw, exptot, agehead, dfmfd, dmmfd) # Select interest variables
 
 # Summary statistics ----
 
-tbl_summary(temp) # Show summary statistics: 
+tbl_summary(temp) # Show summary statistics:
 
 ## Median (25% and 75% quantile) for continuous variable
 
@@ -22,7 +22,8 @@ tbl_summary(temp) # Show summary statistics:
 
 
 tbl_summary(temp,
-            by = dfmfd) # Show summary statistics by dfmfd
+  by = dfmfd
+) # Show summary statistics by dfmfd
 
 
 # Cumulative distribution function ----
@@ -33,8 +34,10 @@ ggplot(raw, aes(x = exptot)) +
   ylab("ECDF") +
   xlab("Total expenditure") # Draw ECDF of total expenditure
 
-ggplot(raw, aes(x = exptot,
-                color = factor(dfmfd))) +
+ggplot(raw, aes(
+  x = exptot,
+  color = factor(dfmfd)
+)) +
   stat_ecdf() +
   theme_bw() +
   ylab("ECDF") +
@@ -56,24 +59,27 @@ ggplot(raw, aes(x = exptot)) +
 
 # Boxplot ----
 
-ggplot(raw, aes(x = exptot,
-                y = factor(dfmfd))) +
+ggplot(raw, aes(
+  x = exptot,
+  y = factor(dfmfd)
+)) +
   geom_boxplot() +
-  theme_bw()  # Draw boxplot
+  theme_bw() # Draw boxplot
 
 
 # Scatter and heatmap ----
 
-ggplot(raw, aes(x = agehead,
-                y = exptot)) +
+ggplot(raw, aes(
+  x = agehead,
+  y = exptot
+)) +
   geom_point() +
-  theme_bw()  # Draw scatter
+  theme_bw() # Draw scatter
 
 
-ggplot(raw, aes(x = agehead,
-                y = exptot)) +
+ggplot(raw, aes(
+  x = agehead,
+  y = exptot
+)) +
   geom_bin2d() +
-  theme_bw()  # Draw heatmap
-
-
-
+  theme_bw() # Draw heatmap
