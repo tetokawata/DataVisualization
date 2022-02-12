@@ -20,6 +20,11 @@ tbl_summary(temp) # Show summary statistics:
 
 ## Share of each category for categorical variable
 
+
+tbl_summary(temp,
+            by = dfmfd) # Show summary statistics by dfmfd
+
+
 # Cumulative distribution function ----
 
 ggplot(raw, aes(x = exptot)) +
